@@ -1,5 +1,5 @@
 # Dumb SoC
-Dumb SoC with dum16 processor
+Dumb SoC with dumb16 processor
 
 ## Run simulations
 ```
@@ -14,5 +14,5 @@ $ make targets
 
 ## Load circuit
 ```
-$ sudo djtgcfg prog -f binary/vga_demo/system.bit -d Nexys3 -i 0
+$ sudo djtgcfg prog -f binary/dumb/system.bit -d Nexys3 -i 0
 ```
