@@ -1,6 +1,12 @@
 # Dumb SoC
 Dumb SoC with dumb16 processor
 
+## Initialize vga-text-mode submodule
+```
+git submodule init
+make -C vga-text-mode/fonts/xbm_tools gen
+```
+
 ## Run simulations
 ```
 make run_simulations

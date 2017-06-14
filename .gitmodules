@@ -1,0 +1,3 @@
+[submodule "vga-text-mode"]
+	path = vga-text-mode
+	url = https://github.com/bntmorgan/vga-text-mode.git
