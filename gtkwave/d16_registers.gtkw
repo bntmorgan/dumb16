@@ -1,0 +1,30 @@
+[*]
+[*] GTKWave Analyzer v3.3.76 (w)1999-2016 BSI
+[*] Thu Jan 19 22:08:19 2017
+[*]
+[dumpfile] "/home/bmorgan/documents/dumb8/dumb16/binary/cores/d16/d16_registers.sim.vcd"
+[dumpfile_mtime] "Thu Jan 19 22:06:50 2017"
+[dumpfile_size] 4804
+[savefile] "/home/bmorgan/documents/dumb8/dumb16/gtkwave/d16_registers.gtkw"
+[timestart] 0
+[size] 1364 747
+[pos] -1 -1
+*-17.109140 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] main.
+[sst_width] 229
+[signals_width] 118
+[sst_expanded] 1
+[sst_vpaned_height] 190
+@22
+main.addr_a[3:0]
+main.addr_b[3:0]
+main.addr_w[3:0]
+main.data[15:0]
+main.qa[15:0]
+main.qb[15:0]
+@28
+main.sys_clk
+main.sys_rst
+main.w
+[pattern_trace] 1
+[pattern_trace] 0

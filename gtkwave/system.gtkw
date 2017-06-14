@@ -1,0 +1,181 @@
+[*]
+[*] GTKWave Analyzer v3.3.79 (w)1999-2017 BSI
+[*] Tue Jun  6 09:12:23 2017
+[*]
+[dumpfile] "/home/bmorgan/documents/dumb8/dumb16/binary/dumb/system.sim.vcd"
+[dumpfile_mtime] "Tue Jun  6 09:07:04 2017"
+[dumpfile_size] 3189362
+[savefile] "/home/bmorgan/documents/dumb8/dumb16/gtkwave/system.gtkw"
+[timestart] 198800
+[size] 1918 1178
+[pos] -1 -1
+*-15.337528 812800 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+[treeopen] main.
+[treeopen] main.system.
+[sst_width] 229
+[signals_width] 283
+[sst_expanded] 1
+[sst_vpaned_height] 299
+@800200
+-system
+@28
+main.system.hard_reset
+@22
+main.system.rst_debounce[19:0]
+@28
+main.sys_clk
+main.sys_rst
+@22
+main.system.d16.reg_ip.cpt[15:0]
+@28
+main.system.d16.jh_load
+@1000200
+-system
+@800200
+-data_bus
+@22
+main.system.d16.data_a[15:0]
+main.system.d16.data_di[15:0]
+main.system.d16.data_do[15:0]
+@28
+main.system.d16.data_we
+@1000200
+-data_bus
+@800200
+-instruction_bus
+@22
+main.system.d16.ins_a[15:0]
+main.system.d16.ins_di[31:0]
+@1000200
+-instruction_bus
+@800200
+-d16
+@c00200
+-jmp
+@22
+main.system.vga.mem_text.sys_a[10:0]
+main.system.vga.mem_text.sys_dr[15:0]
+main.system.vga.mem_text.sys_dw[15:0]
+@28
+main.system.vga.mem_text.sys_we
+@22
+main.system.d16.jmp.a[15:0]
+@28
+main.system.d16.jmp.li_di_rst
+main.system.d16.jmp.load
+@22
+main.system.d16.jmp.mem_addr[15:0]
+main.system.d16.jmp.op[7:0]
+@28
+main.system.d16.jmp.sys_rst
+main.system.d16.jmp.z
+@1401200
+-jmp
+@c00200
+-aleas
+@22
+main.system.d16.aleas.di_ex_a[15:0]
+main.system.d16.aleas.di_ex_op[7:0]
+@28
+main.system.d16.aleas.en
+@22
+main.system.d16.aleas.ex_mem_a[15:0]
+main.system.d16.aleas.ex_mem_op[7:0]
+@28
+main.system.d16.aleas.len
+@22
+main.system.d16.aleas.li_di_a[15:0]
+main.system.d16.aleas.li_di_b[15:0]
+main.system.d16.aleas.li_di_c[15:0]
+main.system.d16.aleas.li_di_op[7:0]
+main.system.d16.aleas.li_di_op_out[7:0]
+@1401200
+-aleas
+@800200
+-alu
+@22
+main.system.d16.alu.a[15:0]
+main.system.d16.alu.b[15:0]
+@28
+main.system.d16.alu.c
+main.system.d16.alu.ctrl_alu[2:0]
+main.system.d16.alu.n
+main.system.d16.alu.o
+@22
+main.system.d16.alu.out[31:0]
+main.system.d16.alu.s[15:0]
+@28
+main.system.d16.alu.sys_clk
+main.system.d16.alu.sys_rst
+main.system.d16.alu.z
+@1000200
+-alu
+@800200
+-li_di
+@22
+main.system.d16.li_di_op_out[7:0]
+main.system.d16.li_di_a_out[15:0]
+main.system.d16.li_di_b_out[15:0]
+main.system.d16.li_di_c_out[15:0]
+@1000200
+-li_di
+@800200
+-di_ex
+@22
+main.system.d16.di_ex_op_out[7:0]
+@23
+main.system.d16.di_ex_a_out[15:0]
+@22
+main.system.d16.di_ex_b_out[15:0]
+main.system.d16.di_ex_c_out[15:0]
+@1000200
+-di_ex
+@800200
+-ex_mem
+@22
+main.system.d16.ex_mem_op_out[7:0]
+main.system.d16.ex_mem_a_out[15:0]
+main.system.d16.ex_mem_b_out[15:0]
+main.system.d16.ex_mem_c_out[15:0]
+@1000200
+-ex_mem
+@800200
+-mem_re
+@22
+main.system.d16.mem_re_op_out[7:0]
+main.system.d16.mem_re_a_out[15:0]
+main.system.d16.mem_re_b_out[15:0]
+main.system.d16.mem_re_c_out[15:0]
+@1000200
+-mem_re
+@800200
+-regs
+@28
+main.system.d16.regs.w
+@22
+main.system.d16.regs.addr_w[3:0]
+main.system.d16.regs.addr_a[3:0]
+main.system.d16.regs.addr_b[3:0]
+main.system.d16.regs.qa[15:0]
+main.system.d16.regs.qb[15:0]
+main.system.d16.regs.\regs[0][15:0]
+main.system.d16.regs.\regs[1][15:0]
+main.system.d16.regs.\regs[2][15:0]
+main.system.d16.regs.\regs[3][15:0]
+main.system.d16.regs.\regs[4][15:0]
+main.system.d16.regs.\regs[5][15:0]
+main.system.d16.regs.\regs[6][15:0]
+main.system.d16.regs.\regs[7][15:0]
+main.system.d16.regs.\regs[8][15:0]
+main.system.d16.regs.\regs[9][15:0]
+main.system.d16.regs.\regs[10][15:0]
+main.system.d16.regs.\regs[11][15:0]
+main.system.d16.regs.\regs[12][15:0]
+main.system.d16.regs.\regs[13][15:0]
+main.system.d16.regs.\regs[14][15:0]
+main.system.d16.regs.\regs[15][15:0]
+@1000200
+-regs
+-d16
+[pattern_trace] 1
+[pattern_trace] 0
