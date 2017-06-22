@@ -172,7 +172,7 @@ bram16 #(
 // Instruction ROM
 dbram32 #(
   .adr_width(14),
-  .init_file("/home/bmorgan/documents/dumb8/dumb16/sources/dumb/rtl/rom.hex")
+  .init_file("/home/bmorgan/documents/dumb16/dumb16/sources/dumb/rtl/rom.hex")
 )  b32 (
   .a_clk(sys_clk),
   .a_rst(sys_rst),

@@ -52,7 +52,13 @@ assign len =
               li_di_op == D16_OP_SUB |
               li_di_op == D16_OP_SHL |
               li_di_op == D16_OP_SHR |
+              li_di_op == D16_OP_OR  |
+              li_di_op == D16_OP_AND |
               li_di_op == D16_OP_EQU |
+              li_di_op == D16_OP_LTE |
+              li_di_op == D16_OP_GTE |
+              li_di_op == D16_OP_LT  |
+              li_di_op == D16_OP_GT  |
               li_di_op == D16_OP_STP // we read two registers here !
             )
           ) |
@@ -70,7 +76,13 @@ assign len =
           ex_mem_op == D16_OP_SUB |
           ex_mem_op == D16_OP_SHL |
           ex_mem_op == D16_OP_SHR |
+          ex_mem_op == D16_OP_OR  |
+          ex_mem_op == D16_OP_AND |
           ex_mem_op == D16_OP_EQU |
+          ex_mem_op == D16_OP_LTE |
+          ex_mem_op == D16_OP_GTE |
+          ex_mem_op == D16_OP_LT  |
+          ex_mem_op == D16_OP_GT  |
           ex_mem_op == D16_OP_COP |
           ex_mem_op == D16_OP_AFC |
           ex_mem_op == D16_OP_LOD |
@@ -89,7 +101,13 @@ assign len =
               li_di_op == D16_OP_SUB |
               li_di_op == D16_OP_SHL |
               li_di_op == D16_OP_SHR |
+              li_di_op == D16_OP_OR  |
+              li_di_op == D16_OP_AND |
               li_di_op == D16_OP_EQU |
+              li_di_op == D16_OP_LTE |
+              li_di_op == D16_OP_GTE |
+              li_di_op == D16_OP_LT  |
+              li_di_op == D16_OP_GT  |
               li_di_op == D16_OP_STP // we read two registers here !
             )
           ) |
@@ -107,7 +125,13 @@ assign len =
           di_ex_op == D16_OP_SUB |
           di_ex_op == D16_OP_SHL |
           di_ex_op == D16_OP_SHR |
+          di_ex_op == D16_OP_OR  |
+          di_ex_op == D16_OP_AND |
           di_ex_op == D16_OP_EQU |
+          di_ex_op == D16_OP_LTE |
+          di_ex_op == D16_OP_GTE |
+          di_ex_op == D16_OP_LT  |
+          di_ex_op == D16_OP_GT  |
           di_ex_op == D16_OP_COP |
           di_ex_op == D16_OP_AFC |
           di_ex_op == D16_OP_LOD |

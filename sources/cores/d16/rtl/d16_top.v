@@ -253,6 +253,9 @@ assign regs_w =
     D16_OP_ADD == mem_re_op_out || D16_OP_SUB == mem_re_op_out ||
     D16_OP_SHL == mem_re_op_out || D16_OP_SHR == mem_re_op_out ||
     D16_OP_LOD == mem_re_op_out || D16_OP_LOP == mem_re_op_out ||
+    D16_OP_OR  == mem_re_op_out || D16_OP_AND == mem_re_op_out ||
+    D16_OP_LTE == mem_re_op_out || D16_OP_GTE == mem_re_op_out ||
+    D16_OP_LT  == mem_re_op_out || D16_OP_GT  == mem_re_op_out ||
     D16_OP_EQU == mem_re_op_out) ? 1'b1 : 1'b0;
 
 // Alu decode
@@ -267,6 +270,9 @@ assign alu_ctrl_alu =
 assign ex_mem_b_in =
   ( di_ex_op_out == D16_OP_ADD || di_ex_op_out == D16_OP_SUB ||
     di_ex_op_out == D16_OP_SHL || di_ex_op_out == D16_OP_SHR ||
+    di_ex_op_out == D16_OP_OR  || di_ex_op_out == D16_OP_AND ||
+    di_ex_op_out == D16_OP_LTE || di_ex_op_out == D16_OP_GTE ||
+    di_ex_op_out == D16_OP_LT  || di_ex_op_out == D16_OP_GT  ||
     di_ex_op_out == D16_OP_LOP || di_ex_op_out == D16_OP_EQU) ? alu_s :
   (di_ex_op_out == D16_OP_STP) ? di_ex_c_out : di_ex_b_out;
 

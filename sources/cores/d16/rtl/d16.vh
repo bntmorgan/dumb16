@@ -8,6 +8,10 @@ parameter D16_OP_SHR = 8'h04;
 parameter D16_OP_OR  = 8'h05;
 parameter D16_OP_AND = 8'h06;
 parameter D16_OP_EQU = 8'h07;
+parameter D16_OP_LTE = 8'h08;
+parameter D16_OP_GTE = 8'h09;
+parameter D16_OP_LT  = 8'h0a;
+parameter D16_OP_GT  = 8'h0b;
 
 // Registers
 parameter D16_OP_AFC = 8'hd0;

@@ -41,7 +41,13 @@ wire [15:0] b_e = (b_in[7]) ? {8'hff, b_in} : {8'h00, b_in};
 // SUB %r0, %r1, %r2
 // SHL %r0, %r1, %r2
 // SHR %r0, %r1, %r2
+// OR  %r0, %r1, %r2
+// AND %r0, %r1, %r2
 // EQU %r0, %r1, %r2
+// LTE %r0, %r1, %r2
+// GTE %r0, %r1, %r2
+// LT  %r0, %r1, %r2
+// GT  %r0, %r1, %r2
 //    Id mapping
 // AFC %r, $imm
 //    a_out = a_in
@@ -81,13 +87,18 @@ assign a_out =
 assign b_out =
   (op_in == D16_OP_AFC || op_in == D16_OP_LOD) ? {b_in, c_in} :
   (op_in == D16_OP_STR || op_in == D16_OP_JMZ) ? {8'b00, c_in} :
-  (op_in == D16_OP_ADD || op_in == D16_OP_SUB || op_in == D16_OP_SHL ||
+  ( op_in == D16_OP_ADD || op_in == D16_OP_SUB || op_in == D16_OP_SHL ||
     op_in == D16_OP_SHR || op_in == D16_OP_COP || op_in == D16_OP_STP ||
-    op_in == D16_OP_EQU) ? {8'h00, b_in} :
+    op_in == D16_OP_EQU || op_in == D16_OP_OR  || op_in == D16_OP_AND ||
+    op_in == D16_OP_LTE || op_in == D16_OP_GTE ||
+    op_in == D16_OP_LT  || op_in == D16_OP_LT) ? {8'h00, b_in} :
   (op_in == D16_OP_LOP) ? b_e : 16'h00 ;
 assign c_out =
-  (op_in == D16_OP_ADD || op_in == D16_OP_SUB ||
-    op_in == D16_OP_SHL || op_in == D16_OP_SHR || op_in == D16_OP_EQU ||
+  ( op_in == D16_OP_ADD || op_in == D16_OP_SUB ||
+    op_in == D16_OP_SHL || op_in == D16_OP_SHR ||
+    op_in == D16_OP_OR  || op_in == D16_OP_AND || op_in == D16_OP_EQU ||
+    op_in == D16_OP_LTE || op_in == D16_OP_GTE ||
+    op_in == D16_OP_LT  || op_in == D16_OP_LT  ||
     op_in == D16_OP_LOP || op_in == D16_OP_STP) ? {8'b00, c_in} :
   16'h00 ;
 
