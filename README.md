@@ -1,6 +1,8 @@
 # Dumb SoC
 Dumb SoC with dumb16 processor
 
+![alt text](http://30000-makina.com/SANY0397.JPG)
+
 ## Initialize vga-text-mode submodule
 ```
 git submodule init
