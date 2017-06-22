@@ -26,3 +26,4 @@ parameter D16_OP_STP = 8'he3;
 // Affection and jumps
 parameter D16_OP_JMP = 8'hf0;
 parameter D16_OP_JMZ = 8'hf1;
+parameter D16_OP_JMR = 8'hf2;

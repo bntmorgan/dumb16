@@ -66,6 +66,7 @@ assign len =
             ex_mem_a == li_di_b &
             (
               li_di_op == D16_OP_JMZ |
+              li_di_op == D16_OP_JMR |
               li_di_op == D16_OP_COP |
               li_di_op == D16_OP_STR
             )
@@ -115,6 +116,7 @@ assign len =
             di_ex_a == li_di_b &
             (
               li_di_op == D16_OP_JMZ |
+              li_di_op == D16_OP_JMR |
               li_di_op == D16_OP_COP |
               li_di_op == D16_OP_STR
             )

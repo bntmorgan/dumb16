@@ -79,15 +79,16 @@ wire [15:0] b_e = (b_in[7]) ? {8'hff, b_in} : {8'h00, b_in};
 //    b_out = c_in
 //    c_out = 0
 // JMR r0
-//    a_out = a_in << 8 + b_in
-//    b_out = c_in
+//    a_out = 0
+//    b_out = a_in
 //    c_out = 0
 
 assign op_out = op_in;
 assign a_out =
   (op_in == D16_OP_JMP || op_in == D16_OP_JMZ || op_in == D16_OP_STR) ?
     {a_in, b_in} :
-  (op_in == D16_OP_STP) ? a_e : {8'h00, a_in};
+  (op_in == D16_OP_STP) ? a_e :
+  (op_in == D16_OP_JMR) ? 16'b0 : {8'h00, a_in};
 assign b_out =
   (op_in == D16_OP_AFC || op_in == D16_OP_LOD) ? {b_in, c_in} :
   (op_in == D16_OP_STR || op_in == D16_OP_JMZ) ? {8'b00, c_in} :
@@ -96,7 +97,8 @@ assign b_out =
     op_in == D16_OP_EQU || op_in == D16_OP_OR  || op_in == D16_OP_AND ||
     op_in == D16_OP_LTE || op_in == D16_OP_GTE ||
     op_in == D16_OP_LT  || op_in == D16_OP_LT) ? {8'h00, b_in} :
-  (op_in == D16_OP_LOP) ? b_e : 16'h00 ;
+  (op_in == D16_OP_LOP) ? b_e :
+  (op_in == D16_OP_JMR) ? {8'h00, a_in} : 16'h00 ;
 assign c_out =
   ( op_in == D16_OP_ADD || op_in == D16_OP_SUB ||
     op_in == D16_OP_SHL || op_in == D16_OP_SHR ||
