@@ -22,7 +22,8 @@ module d16_jmp (
   input sys_rst,
   input [7:0] op,
   input [15:0] a,
-  input z,
+  input [15:0] b,
+  // input z,
   output li_di_rst,
   output [15:0] mem_addr,
   output load
@@ -30,42 +31,13 @@ module d16_jmp (
 
 `include "d16.vh"
 
-//reg jmp_rst;
-//
-//task init;
-//begin
-//  jmp_rst <= 1'b1;
-//end
-//endtask
-
-// Delay the reset beacause of synchroniszed intruction bus
-//always @(posedge sys_clk) begin
-//  if (sys_rst == 1'b1) begin
-//    init;
-//  end else begin
-//    jmp_rst <= 1'b0;
-//    if (li_di_rst_pre == 1'b1) begin
-//      jmp_rst <= 1'b1;
-//    end
-//  end
-//end
-
-//wire li_di_rst_pre;
-
-assign li_di_rst =
-  (sys_rst == 1'b1) ? 1'b1 :
-  ((op == D16_OP_JMZ && z == 1'b1) || op == D16_OP_JMP) ? 1'b1 :
+wire jmp =
+  ((op == D16_OP_JMZ && b == 16'b0) || op == D16_OP_JMP) ? 1'b1 : // with b op
+  // ((op == D16_OP_JMZ && z == 1'b1) || op == D16_OP_JMP) ? 1'b1 : with z flag
   1'b0;
 
-//assign li_di_rst = li_di_rst_pre;// | jmp_rst;
-
-assign mem_addr =
-  (sys_rst == 1'b1) ? 8'b0 :
-  ((op == D16_OP_JMZ && z == 1'b1) || op == D16_OP_JMP) ? a :
-  8'b0;
-assign load =
-  (sys_rst == 1'b1) ? 8'b0 :
-  ((op == D16_OP_JMZ && z == 1'b1) || op == D16_OP_JMP) ? 1'b1 :
-  1'b0;
+assign li_di_rst = (sys_rst == 1'b1) ? 1'b1 : jmp;
+assign mem_addr = (sys_rst == 1'b1) ? 8'b0 : (jmp == 1'b1) ? a : 8'b0;
+assign load = (sys_rst == 1'b1) ? 8'b0 : jmp;
 
 endmodule

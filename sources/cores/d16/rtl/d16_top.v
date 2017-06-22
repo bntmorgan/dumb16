@@ -91,7 +91,7 @@ wire alu_n;
 wire alu_o;
 wire alu_z;
 wire alu_c;
-wire [2:0] alu_ctrl_alu;
+wire [3:0] alu_ctrl_alu;
 wire [15:0] alu_a;
 wire [15:0] alu_b;
 
@@ -239,7 +239,8 @@ d16_jmp jmp (
   .sys_rst(sys_rst),
   .op(di_ex_op_out),
   .a(di_ex_a_out),
-  .z(alu_z),
+  .b(di_ex_b_out),
+//  .z(alu_z), // We do not use alu flags anymore
   .li_di_rst(jh_sys_rst),
   .mem_addr(jh_adr),
   .load(jh_load)
@@ -260,11 +261,11 @@ assign regs_w =
 
 // Alu decode
 assign alu_ctrl_alu =
-  (di_ex_op_out[7:3] == 5'b0) ? di_ex_op_out[2:0] :
+  (di_ex_op_out[7:4] == 4'b0) ? di_ex_op_out[3:0] :
   // if LOP then add !
-  (di_ex_op_out == D16_OP_LOP || di_ex_op_out == D16_OP_STP) ? 3'b001 :
+  (di_ex_op_out == D16_OP_LOP || di_ex_op_out == D16_OP_STP) ? 4'b0001 :
   // if JMZ then sub for non synced ALU flags version
-  (di_ex_op_out == D16_OP_JMZ) ? 3'b010 : 3'b0;
+  (di_ex_op_out == D16_OP_JMZ) ? 4'b0010 : 4'b0;
 
 // Alu out
 assign ex_mem_b_in =

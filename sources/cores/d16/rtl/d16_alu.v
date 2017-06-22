@@ -25,19 +25,23 @@ module d16_alu (
   output o,
   output z,
   output c,
-  input [2:0] ctrl_alu,
+  input [3:0] ctrl_alu,
   input [15:0] a,
   input [15:0] b
 );
 
 wire [31:0] out =
-    (ctrl_alu == 3'b001) ? a + b :
-    (ctrl_alu == 3'b010) ? a - b :
-    (ctrl_alu == 3'b011) ? a << 1 :
-    (ctrl_alu == 3'b100) ? a >> 1 :
-    (ctrl_alu == 3'b101) ? a | b :
-    (ctrl_alu == 3'b110) ? a & b :
-    (ctrl_alu == 3'b111) ? a == b :
+    (ctrl_alu == 4'b0001) ? a + b :
+    (ctrl_alu == 4'b0010) ? a - b :
+    (ctrl_alu == 4'b0011) ? a << 1 :
+    (ctrl_alu == 4'b0100) ? a >> 1 :
+    (ctrl_alu == 4'b0101) ? a | b :
+    (ctrl_alu == 4'b0110) ? a & b :
+    (ctrl_alu == 4'b0111) ? a == b :
+    (ctrl_alu == 4'b1000) ? a <= b :
+    (ctrl_alu == 4'b1001) ? a >= b :
+    (ctrl_alu == 4'b1010) ? a < b :
+    (ctrl_alu == 4'b1011) ? a > b :
     32'b0;
 
 assign c = out[8];
