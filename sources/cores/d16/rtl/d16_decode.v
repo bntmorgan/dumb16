@@ -37,36 +37,36 @@ wire [15:0] b_e = (b_in[7]) ? {8'hff, b_in} : {8'h00, b_in};
 
 // Instruction decoding
 
-// ADD %r0, %r1, %r2
-// SUB %r0, %r1, %r2
-// SHL %r0, %r1, %r2
-// SHR %r0, %r1, %r2
-// OR  %r0, %r1, %r2
-// AND %r0, %r1, %r2
-// EQU %r0, %r1, %r2
-// LTE %r0, %r1, %r2
-// GTE %r0, %r1, %r2
-// LT  %r0, %r1, %r2
-// GT  %r0, %r1, %r2
+// ADD r0, r1, r2
+// SUB r0, r1, r2
+// SHL r0, r1, r2
+// SHR r0, r1, r2
+// OR  r0, r1, r2
+// AND r0, r1, r2
+// EQU r0, r1, r2
+// LTE r0, r1, r2
+// GTE r0, r1, r2
+// LT  r0, r1, r2
+// GT  r0, r1, r2
 //    Id mapping
-// AFC %r, $imm
+// AFC r, $imm
 //    a_out = a_in
 //    b_out = b_in << 8 + c_in
 //    c_out = 0
-// COP %r1, %r2
+// COP r1, r2
 //    Id mapping
 //    c_out = 0
-// LOP %r1, %r2 The trick here is to use the Arithmetic pipeline to load the
+// LOP r1, r2 The trick here is to use the Arithmetic pipeline to load the
 //              registers
-// STP %r1, %r2
+// STP r1, r2
 //    a_out = 0
 //    b_out = a_in
 //    c_out = b_in
-// LOD %r, addr
+// LOD r, addr
 //    a_out = a_in
 //    b_out = b_in << 8 + c_in
 //    c_out = 0
-// STR addr, %r
+// STR addr, r
 //    a_out = a_int << 8 + b_in
 //    b_out = c_in
 //    c_out = 0
@@ -75,6 +75,10 @@ wire [15:0] b_e = (b_in[7]) ? {8'hff, b_in} : {8'h00, b_in};
 //    b_out = 0
 //    c_out = 0
 // JMZ addr
+//    a_out = a_in << 8 + b_in
+//    b_out = c_in
+//    c_out = 0
+// JMR r0
 //    a_out = a_in << 8 + b_in
 //    b_out = c_in
 //    c_out = 0
