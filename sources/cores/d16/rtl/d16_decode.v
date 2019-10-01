@@ -62,6 +62,10 @@ wire [15:0] b_e = (b_in[7]) ? {8'hff, b_in} : {8'h00, b_in};
 //    a_out = 0
 //    b_out = a_in
 //    c_out = b_in
+// LPR r1, r2, r2
+//    a_out = a_in
+//    b_out = b_in
+//    c_out = c_in
 // LOD r, addr
 //    a_out = a_in
 //    b_out = b_in << 8 + c_in

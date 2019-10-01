@@ -22,6 +22,8 @@ parameter D16_OP_LOD = 8'he0;
 parameter D16_OP_STR = 8'he1;
 parameter D16_OP_LOP = 8'he2;
 parameter D16_OP_STP = 8'he3;
+parameter D16_OP_LPR = 8'he4;
+parameter D16_OP_SPR = 8'he5;
 
 // Affection and jumps
 parameter D16_OP_JMP = 8'hf0;
